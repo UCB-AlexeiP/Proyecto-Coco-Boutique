@@ -1,0 +1,194 @@
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 44px;
+}
+
+.stat-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-beige-dark);
+    border-radius: var(--radius-lg);
+    padding: 22px 22px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--color-primary);
+}
+
+.stat-card.acento-durazno::before {
+    background-color: var(--color-peach);
+}
+
+.stat-card h2 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-ink-soft);
+    margin-top: 6px;
+}
+
+.stat-numero {
+    font-family: var(--font-display);
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    line-height: 1;
+}
+
+.stat-card.acento-durazno .stat-numero {
+    color: var(--color-peach-dark);
+}
+
+/* ---------- Barra de herramientas (búsqueda / filtros / acción) ---------- */
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.toolbar-filtros {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.toolbar input[type="search"],
+.toolbar select {
+    font-family: var(--font-body);
+    font-size: 14px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--color-beige-dark);
+    background-color: var(--color-white);
+    color: var(--color-ink);
+}
+
+.toolbar input[type="search"]:focus,
+.toolbar select:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 1px;
+}
+
+/* ---------- Contenedor de sección con título ---------- */
+
+.seccion-titulo {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+/* ---------- Tabla ---------- */
+
+.table-wrapper {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-beige-dark);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.tabla thead {
+    background-color: var(--color-primary-light);
+}
+
+.tabla th {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--color-primary-dark);
+    padding: 14px 20px;
+}
+
+.tabla td {
+    padding: 14px 20px;
+    border-top: 1px solid var(--color-beige-dark);
+    color: var(--color-ink);
+    vertical-align: middle;
+}
+
+.tabla tbody tr:hover {
+    background-color: #faf8ff;
+}
+
+.tabla-vacia {
+    padding: 28px 20px;
+    text-align: center;
+    color: var(--color-ink-soft);
+    font-size: 14px;
+}
+
+.tabla-imagen-miniatura {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    object-fit: cover;
+    background-color: var(--color-beige);
+}
+
+.tabla-acciones {
+    display: flex;
+    gap: 8px;
+}
+
+.tabla-accion-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 8px;
+    color: var(--color-primary-dark);
+}
+
+.tabla-accion-btn:hover {
+    background-color: var(--color-primary-light);
+}
+
+.tabla-accion-btn.eliminar {
+    color: #c0392b;
+}
+
+.tabla-accion-btn.eliminar:hover {
+    background-color: #fceceb;
+}
+
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 780px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tabla {
+        font-size: 13px;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+    }
+}

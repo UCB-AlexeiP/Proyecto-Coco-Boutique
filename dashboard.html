@@ -1,204 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Dashboard - Coco Boutique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/tablas.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
     <div class="app-layout">
 
-        <!-- Sidebar -->
         <aside class="sidebar">
-            <div class="sidebar-brand">
+            <a href="dashboard.html" class="sidebar-brand">
                 <span class="sidebar-brand-coco">Coco</span>
                 <span class="sidebar-brand-boutique">Boutique</span>
-            </div>
+            </a>
 
             <nav class="sidebar-nav">
                 <a href="dashboard.html" class="nav-link is-active">Dashboard</a>
 
                 <div class="nav-group">
-                    <span class="nav-group-label">Productos</span>
+                    <a href="productos.html" class="nav-group-label">Productos</a>
                     <a href="registrar-producto.html" class="nav-sublink">Registrar Producto</a>
                 </div>
 
                 <div class="nav-group">
-                    <span class="nav-group-label">Ventas</span>
-                    <a href="registro-venta.html" class="nav-sublink">Registrar Venta</a>
+                    <a href="ventas.html" class="nav-group-label">Ventas</a>
+                    <a href="registrar-venta.html" class="nav-sublink">Registrar Venta</a>
                 </div>
             </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn-cerrar-sesion" id="btn-cerrar-sesion" type="button">Cerrar sesión</button>
+            </div>
         </aside>
 
-        <!-- Contenido principal -->
         <main class="main-content">
 
-            <div class="dashboard-container">
+            <div class="bienvenida">
                 <h1>Dashboard</h1>
                 <p>Bienvenid@ administrador</p>
             </div>
 
             <section class="stats-grid">
-                <div class="dashboard-container-cuadro stat-prendas">
+                <div class="stat-card">
                     <p class="stat-numero" id="stat-prendas">0</p>
                     <h2>Prendas disponibles</h2>
                 </div>
 
-                <div class="dashboard-container-cuadro stat-ventas-mes">
+                <div class="stat-card">
                     <p class="stat-numero" id="stat-ventas-mes">0</p>
                     <h2>Ventas del mes</h2>
                 </div>
 
-                <div class="dashboard-container-cuadro stat-ventas-totales">
+                <div class="stat-card">
                     <p class="stat-numero" id="stat-ventas-totales">0</p>
                     <h2>Ventas totales</h2>
                 </div>
 
-                <div class="dashboard-container-cuadro stat-ingresos">
+                <div class="stat-card acento-durazno">
                     <p class="stat-numero"><span id="stat-ingresos">0</span> Bs</p>
                     <h2>Ingresos del mes</h2>
                 </div>
             </section>
 
-            <section class="ventas-recientes">
-                <h3>Ventas recientes</h3>
+            <h3 class="seccion-titulo">Ventas recientes</h3>
 
-                <div class="table-wrapper">
-                    <table class="dashboard-table" id="tabla-ventas">
-                        <thead>
-                            <tr>
-                                <th>Fecha</th>
-                                <th>Id Producto</th>
-                                <th>Producto</th>
-                                <th>Cantidad</th>
-                                <th>Total</th>
-                                <th>Estado</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabla-ventas-body">
-                        </tbody>
-                    </table>
-
-                    <p class="tabla-vacia" id="tabla-vacia" hidden>Todavía no hay ventas registradas.</p>
-                </div>
-            </section>
+            <div class="table-wrapper">
+                <table class="tabla" id="tabla-ventas">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Id Producto</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-ventas-body"></tbody>
+                </table>
+                <p class="tabla-vacia" id="tabla-vacia" hidden>Todavía no hay ventas registradas.</p>
+            </div>
 
         </main>
     </div>
 
-    <script>
-        // ---------------------------------------------------------------
-        // Almacén compartido de ventas: registro-venta.html debe guardar
-        // cada venta nueva en localStorage bajo la clave "cocoVentas" como
-        // un array de objetos con esta forma:
-        // { fecha: "2023-06-01", idProducto: "P001", producto: "Vestido de verano",
-        //   cantidad: 2, total: 200, estado: "Pendiente" }
-        //
-        // Ejemplo para usar en registro-venta.html al completar el registro:
-        //
-        //   const ventas = JSON.parse(localStorage.getItem("cocoVentas")) || [];
-        //   ventas.push(nuevaVenta);
-        //   localStorage.setItem("cocoVentas", JSON.stringify(ventas));
-        //   window.location.href = "dashboard.html";
-        //
-        // También se puede llevar el conteo de prendas disponibles en la
-        // clave "cocoPrendasDisponibles" (un número simple).
-        // ---------------------------------------------------------------
-
-        const CLAVE_VENTAS = "cocoVentas";
-        const CLAVE_PRENDAS = "cocoPrendasDisponibles";
-
-        const ventasIniciales = [
-            { fecha: "2023-06-01", idProducto: "P001", producto: "Vestido de verano", cantidad: 2, total: 200, estado: "Pendiente" },
-            { fecha: "2023-06-02", idProducto: "P002", producto: "Camisa de manga larga", cantidad: 1, total: 100, estado: "Completada" }
-        ];
-
-        function obtenerVentas() {
-            const guardadas = localStorage.getItem(CLAVE_VENTAS);
-            if (guardadas === null) {
-                localStorage.setItem(CLAVE_VENTAS, JSON.stringify(ventasIniciales));
-                return ventasIniciales;
-            }
-            try {
-                return JSON.parse(guardadas);
-            } catch {
-                return [];
-            }
-        }
-
-        function formatearBs(numero) {
-            return numero.toLocaleString("es-BO");
-        }
-
-        function renderizarTabla(ventas) {
-            const cuerpo = document.getElementById("tabla-ventas-body");
-            const vacio = document.getElementById("tabla-vacia");
-            cuerpo.innerHTML = "";
-
-            if (ventas.length === 0) {
-                vacio.hidden = false;
-                return;
-            }
-            vacio.hidden = true;
-
-            ventas
-                .slice()
-                .sort((a, b) => new Date(b.fecha) - new Date(a.fecha))
-                .forEach((venta) => {
-                    const fila = document.createElement("tr");
-
-                    const estadoClase = venta.estado === "Completada" ? "badge-completada" : "badge-pendiente";
-
-                    fila.innerHTML = `
-                        <td>${venta.fecha}</td>
-                        <td>${venta.idProducto}</td>
-                        <td>${venta.producto}</td>
-                        <td>${venta.cantidad}</td>
-                        <td>${formatearBs(venta.total)} Bs</td>
-                        <td><span class="badge ${estadoClase}">${venta.estado}</span></td>
-                    `;
-
-                    cuerpo.appendChild(fila);
-                });
-        }
-
-        function calcularStats(ventas) {
-            const ahora = new Date();
-            const mesActual = ahora.getMonth();
-            const anioActual = ahora.getFullYear();
-
-            const ventasDelMes = ventas.filter((v) => {
-                const fecha = new Date(v.fecha);
-                return fecha.getMonth() === mesActual && fecha.getFullYear() === anioActual;
-            }); 
-            const ingresosDelMes = ventasDelMes.reduce((suma, v) => suma + Number(v.total), 0);
-            const prendasDisponibles = Number(localStorage.getItem(CLAVE_PRENDAS)) || 0;
-
-            document.getElementById("stat-prendas").textContent = prendasDisponibles;
-            document.getElementById("stat-ventas-mes").textContent = ventasDelMes.length;
-            document.getElementById("stat-ventas-totales").textContent = ventas.length;
-            document.getElementById("stat-ingresos").textContent = formatearBs(ingresosDelMes);
-        }
-
-        function actualizarDashboard() {
-            const ventas = obtenerVentas();
-            renderizarTabla(ventas);
-            calcularStats(ventas);
-        }
-
-        document.addEventListener("DOMContentLoaded", actualizarDashboard); 
-        // Si el usuario tiene el dashboard abierto en otra pestaña mientras
-        // registra una venta, esto lo actualiza sin recargar la página.
-        window.addEventListener("storage", (evento) => {
-            if (evento.key === CLAVE_VENTAS) {
-                actualizarDashboard();
-            }
-        });
-    </script>
-
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
