@@ -2,7 +2,6 @@ body.pagina-publica {
     background-color: var(--color-beige);
 }
 
-/* ---------- Header ---------- */
 
 .tienda-header {
     display: flex;
@@ -57,7 +56,6 @@ body.pagina-publica {
     padding: 10px 20px;
 }
 
-/* ---------- Hero ---------- */
 
 .hero {
     display: flex;
@@ -114,7 +112,7 @@ body.pagina-publica {
     padding: 20px;
 }
 
-/* ---------- Categorías ---------- */
+
 
 .categorias {
     padding: 0 6% 20px;
@@ -156,7 +154,6 @@ body.pagina-publica {
     color: var(--color-white);
 }
 
-/* ---------- Secciones de categoría / grid de productos ---------- */
 
 .categoria-seccion {
     padding: 48px 6% 8px;
@@ -265,7 +262,7 @@ body.pagina-publica {
     padding: 20px 0;
 }
 
-/* ---------- Footer / contacto ---------- */
+
 
 .tienda-footer {
     margin-top: 64px;
@@ -343,7 +340,7 @@ body.pagina-publica {
     color: var(--color-white);
 }
 
-/* ---------- Botón flotante de WhatsApp ---------- */
+
 
 .whatsapp-flotante {
     position: fixed;
@@ -371,7 +368,7 @@ body.pagina-publica {
     fill: #ffffff;
 }
 
-/* ---------- Responsive ---------- */
+
 
 @media (max-width: 960px) {
     .hero {

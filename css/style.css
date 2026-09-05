@@ -1,5 +1,5 @@
 :root {
-    /* Paleta base: lila, beige, blanco, durazno */
+
     --color-primary: #b673fa;
     --color-primary-dark: #7c3fc4;
     --color-primary-light: #ece0fc;
@@ -58,7 +58,7 @@ h1, h2, h3, h4 {
     line-height: 1.2;
 }
 
-/* ---------- Botones compartidos ---------- */
+
 
 .btn {
     display: inline-flex;
@@ -118,7 +118,7 @@ h1, h2, h3, h4 {
     background-color: #1ebe5b;
 }
 
-/* ---------- Badges de estado (usados en tablas de ventas) ---------- */
+
 
 .badge {
     display: inline-block;
@@ -144,7 +144,7 @@ h1, h2, h3, h4 {
     color: var(--color-neutral-text);
 }
 
-/* ---------- Utilidades ---------- */
+
 
 .solo-lectura-visible {
     color: var(--color-ink-soft);

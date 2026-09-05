@@ -58,16 +58,6 @@ Coco Boutique/
     ├── productos/               Agrega aquí las fotos reales de tus prendas
     └── iconos/                  (WhatsApp/Facebook/TikTok van como SVG inline)
 ```
-> Nota sobre los CSS compartidos: además de los archivos que pedía la
-> estructura original, se agregaron `sidebar.css`, `tablas.css` y
-> `formularios.css` para no repetir el mismo código en cada página. Cada
-> HTML enlaza `style.css` primero, luego los parciales compartidos que
-> necesita, y al final su propio CSS específico.
+> Nota sobre los CSS compartidos: además de los archivos que pedía la estructura original, se agregaron `sidebar.css`, `tablas.css` y `formularios.css` para no repetir el mismo código en cada página. Cada  HTML enlaza `style.css` primero, luego los parciales compartidos que necesita, y al final su propio CSS específico.
 Próximos pasos sugeridos
-Reemplaza el número `59170000000` en `js/catalogo.js`, `index.html` y
-`catalogo.html` por el WhatsApp real de la tienda.
-Sube fotos reales de las prendas: al registrar un producto en
-`registrar-producto.html` puedes subir una imagen y se guarda
-automáticamente (como base64) en el navegador.
-Cuando quieras usuarios reales, tallas por color/stock detallado o pedidos
-compartidos entre dispositivos, vas a necesitar un backend.
+Sube fotos reales de las prendas: al registrar un producto en `registrar-producto.html` puedes subir una imagen y se guarda automáticamente (como base64) en el navegador. Cuando quieras usuarios reales, tallas por color/stock detallado o pedidoscompartidos entre dispositivos, vas a necesitar un backend.

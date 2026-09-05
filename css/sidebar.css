@@ -141,7 +141,7 @@
     color: #ffffff;
 }
 
-/* ---------- Encabezado de página dentro del contenido ---------- */
+
 
 .page-header h1 {
     font-size: 32px;
@@ -163,7 +163,7 @@
     margin-bottom: 32px;
 }
 
-/* ---------- Responsive ---------- */
+
 
 @media (max-width: 780px) {
     .app-layout {

@@ -4,8 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("btn-cerrar-sesion")?.addEventListener("click", COCO.cerrarSesion);
 
-    // Si el usuario tiene el dashboard abierto en otra pestaña mientras
-    // registra una venta o un producto, esto lo actualiza sin recargar.
+ 
     window.addEventListener("storage", (evento) => {
         if (evento.key === "cocoVentas" || evento.key === "cocoProductos") {
             actualizarDashboard();
