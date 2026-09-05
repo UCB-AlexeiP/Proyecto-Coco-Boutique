@@ -47,7 +47,7 @@
     color: var(--color-peach-dark);
 }
 
-/* ---------- Barra de herramientas (búsqueda / filtros / acción) ---------- */
+
 
 .toolbar {
     display: flex;
@@ -81,7 +81,6 @@
     outline-offset: 1px;
 }
 
-/* ---------- Contenedor de sección con título ---------- */
 
 .seccion-titulo {
     font-family: var(--font-display);
@@ -90,7 +89,7 @@
     margin-bottom: 16px;
 }
 
-/* ---------- Tabla ---------- */
+
 
 .table-wrapper {
     background-color: var(--color-white);

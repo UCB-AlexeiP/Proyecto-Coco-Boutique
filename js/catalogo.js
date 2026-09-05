@@ -1,4 +1,4 @@
-const NUMERO_WHATSAPP_TIENDA = "59165510162"; // reemplaza por el número real de la tienda
+const NUMERO_WHATSAPP_TIENDA = "59165510162"; // reemplaza por el número 
 
 document.addEventListener("DOMContentLoaded", () => {
     const productos = COCO.obtenerProductos();

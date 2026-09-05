@@ -4,8 +4,6 @@ const COCO = (() => {
     const CLAVE_VENTAS = "cocoVentas";
     const CLAVE_SESION = "cocoSesionAdmin";
 
-    /* ---------- Datos semilla (se usan solo la primera vez) ---------- */
-
     const productosSemilla = [
         {
             id: "P001",
@@ -16,7 +14,7 @@ const COCO = (() => {
             tallas: ["S", "M", "L"],
             colores: ["Durazno", "Blanco"],
             descripcion: "Vestido ligero de algodón, ideal para el día a día.",
-            imagen: ""
+            imagen: "imagenes/productos/P001.jpg"
         },
         {
             id: "P002",
@@ -27,7 +25,7 @@ const COCO = (() => {
             tallas: ["M", "L", "XL"],
             colores: ["Lila"],
             descripcion: "Camisa fresca de manga larga, corte holgado.",
-            imagen: ""
+            imagen: "imagenes/productos/P002.jpg"
         },
         {
             id: "P003",
@@ -38,7 +36,7 @@ const COCO = (() => {
             tallas: ["S", "M", "L", "XL"],
             colores: ["Beige", "Lila"],
             descripcion: "Chompa tejida de punto grueso, calidez y estilo.",
-            imagen: ""
+            imagen: "imagenes/productos/P003.jpg"
         },
         {
             id: "P004",
@@ -49,7 +47,7 @@ const COCO = (() => {
             tallas: ["S", "M", "L"],
             colores: ["Azul clásico"],
             descripcion: "Jean de tiro alto, silueta cómoda y versátil.",
-            imagen: ""
+            imagen: "imagenes/productos/P004.jpg"
         }
     ];
 
@@ -63,8 +61,6 @@ const COCO = (() => {
         fecha.setDate(fecha.getDate() + offsetDias);
         return fecha.toISOString().slice(0, 10);
     }
-
-    /* ---------- Productos ---------- */
 
     function obtenerProductos() {
         const guardados = localStorage.getItem(CLAVE_PRODUCTOS);
@@ -130,7 +126,6 @@ const COCO = (() => {
         guardarVentas(ventas);
     }
 
-    /* ---------- Utilidades ---------- */
 
     function generarId(prefijo, lista) {
         const numeros = lista
@@ -175,7 +170,6 @@ const COCO = (() => {
         return `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
     }
 
-    /* ---------- Sesión (protección simple de páginas admin) ---------- */
 
     function iniciarSesion() {
         sessionStorage.setItem(CLAVE_SESION, "1");
