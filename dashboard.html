@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Coco Boutique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/tablas.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="app-layout">
+
+        <aside class="sidebar">
+            <a href="dashboard.html" class="sidebar-brand">
+                <span class="sidebar-brand-coco">Coco</span>
+                <span class="sidebar-brand-boutique">Boutique</span>
+            </a>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link is-active">Dashboard</a>
+
+                <div class="nav-group">
+                    <a href="productos.html" class="nav-group-label">Productos</a>
+                    <a href="registrar-producto.html" class="nav-sublink">Registrar Producto</a>
+                </div>
+
+                <div class="nav-group">
+                    <a href="ventas.html" class="nav-group-label">Ventas</a>
+                    <a href="registrar-venta.html" class="nav-sublink">Registrar Venta</a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn-cerrar-sesion" id="btn-cerrar-sesion" type="button">Cerrar sesión</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <div class="bienvenida">
+                <h1>Dashboard</h1>
+                <p>Bienvenid@ administrador</p>
+            </div>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <p class="stat-numero" id="stat-prendas">0</p>
+                    <h2>Prendas disponibles</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p class="stat-numero" id="stat-ventas-mes">0</p>
+                    <h2>Ventas del mes</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p class="stat-numero" id="stat-ventas-totales">0</p>
+                    <h2>Ventas totales</h2>
+                </div>
+
+                <div class="stat-card acento-durazno">
+                    <p class="stat-numero"><span id="stat-ingresos">0</span> Bs</p>
+                    <h2>Ingresos del mes</h2>
+                </div>
+            </section>
+
+            <h3 class="seccion-titulo">Ventas recientes</h3>
+
+            <div class="table-wrapper">
+                <table class="tabla" id="tabla-ventas">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Id Producto</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-ventas-body"></tbody>
+                </table>
+                <p class="tabla-vacia" id="tabla-vacia" hidden>Todavía no hay ventas registradas.</p>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
