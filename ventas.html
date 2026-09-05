@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas - Coco Boutique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/tablas.css">
+    <link rel="stylesheet" href="css/ventas.css">
+</head>
+<body>
+    <div class="app-layout">
+
+        <aside class="sidebar">
+            <a href="dashboard.html" class="sidebar-brand">
+                <span class="sidebar-brand-coco">Coco</span>
+                <span class="sidebar-brand-boutique">Boutique</span>
+            </a>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+
+                <div class="nav-group">
+                    <a href="productos.html" class="nav-group-label">Productos</a>
+                    <a href="registrar-producto.html" class="nav-sublink">Registrar Producto</a>
+                </div>
+
+                <div class="nav-group">
+                    <a href="ventas.html" class="nav-group-label is-active">Ventas</a>
+                    <a href="registrar-venta.html" class="nav-sublink">Registrar Venta</a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn-cerrar-sesion" id="btn-cerrar-sesion" type="button">Cerrar sesión</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <div class="page-header">
+                <div>
+                    <h1>Ventas</h1>
+                    <p>Historial completo de ventas realizadas</p>
+                </div>
+                <a href="registrar-venta.html" class="btn btn-primary">+ Registrar venta</a>
+            </div>
+
+            <div class="resumen-ventas">
+                <div class="resumen-ventas-item">
+                    <strong id="resumen-total-ventas">0</strong>
+                    Ventas registradas
+                </div>
+                <div class="resumen-ventas-item">
+                    <strong id="resumen-ingresos-totales">0 Bs</strong>
+                    Ingresos totales
+                </div>
+            </div>
+
+            <div class="toolbar">
+                <input type="search" id="buscador-ventas" placeholder="Buscar por cliente o producto...">
+                <div class="toolbar-filtros">
+                    <select id="filtro-estado">
+                        <option value="todos">Todos los estados</option>
+                        <option value="Completado">Completado</option>
+                        <option value="Reserva con adelanto">Reserva con adelanto</option>
+                        <option value="Reserva sin adelanto">Reserva sin adelanto</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Id Producto</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                            <th>Método de pago</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-ventas-completas-body"></tbody>
+                </table>
+                <p class="tabla-vacia" id="ventas-vacio" hidden>No se encontraron ventas.</p>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/ventas.js"></script>
+</body>
+</html>

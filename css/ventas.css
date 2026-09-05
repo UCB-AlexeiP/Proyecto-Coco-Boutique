@@ -1,0 +1,18 @@
+.resumen-ventas {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.resumen-ventas-item {
+    font-size: 13px;
+    color: var(--color-ink-soft);
+}
+
+.resumen-ventas-item strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--color-primary-dark);
+}
