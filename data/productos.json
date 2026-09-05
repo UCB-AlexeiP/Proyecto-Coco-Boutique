@@ -8,7 +8,7 @@
         "tallas": ["S", "M", "L"],
         "colores": ["Durazno", "Blanco"],
         "descripcion": "Vestido ligero de algodón, ideal para el día a día.",
-        "imagen": ""
+        "imagen": "href:img/P001.jpg"
     },
     {
         "id": "P002",
@@ -19,7 +19,7 @@
         "tallas": ["M", "L", "XL"],
         "colores": ["Lila"],
         "descripcion": "Camisa fresca de manga larga, corte holgado.",
-        "imagen": ""
+        "imagen": "href:img/P002.jpg"
     },
     {
         "id": "P003",
@@ -30,7 +30,7 @@
         "tallas": ["S", "M", "L", "XL"],
         "colores": ["Beige", "Lila"],
         "descripcion": "Chompa tejida de punto grueso, calidez y estilo.",
-        "imagen": ""
+        "imagen": "href:img/P003.jpg"
     },
     {
         "id": "P004",
