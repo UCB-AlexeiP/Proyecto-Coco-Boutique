@@ -1,0 +1,30 @@
+[
+    {
+        "id": "V0001",
+        "fecha": "2026-09-01",
+        "cliente": "María Torrez",
+        "idProducto": "P001",
+        "producto": "Vestido de verano",
+        "cantidad": 2,
+        "precioUnitario": 100,
+        "total": 200,
+        "metodoPago": "Qr",
+        "estado": "Completado",
+        "valorReserva": 0,
+        "observacion": ""
+    },
+    {
+        "id": "V0002",
+        "fecha": "2026-09-03",
+        "cliente": "Ana Quiroga",
+        "idProducto": "P002",
+        "producto": "Camisa de manga larga",
+        "cantidad": 1,
+        "precioUnitario": 100,
+        "total": 100,
+        "metodoPago": "Efectivo",
+        "estado": "Reserva sin adelanto",
+        "valorReserva": 0,
+        "observacion": "Retira el viernes"
+    }
+]

@@ -1,9 +1,183 @@
-*{
+:root {
+    /* Paleta base: lila, beige, blanco, durazno */
+    --color-primary: #b673fa;
+    --color-primary-dark: #7c3fc4;
+    --color-primary-light: #ece0fc;
+    --color-beige: #f6efe0;
+    --color-beige-dark: #ead9b8;
+    --color-ink: #241b35;
+    --color-ink-soft: #7a6f92;
+    --color-white: #ffffff;
+    --color-peach: #ffb37a;
+    --color-peach-dark: #e8935a;
+
+    --color-success-bg: #e4f5ec;
+    --color-success-text: #2f8a5b;
+    --color-warning-bg: #fdefdd;
+    --color-warning-text: #b9711f;
+    --color-neutral-bg: #ece0fc;
+    --color-neutral-text: #6a4aa3;
+
+    --font-display: "Fraunces", Georgia, serif;
+    --font-body: "Manrope", "Segoe UI", sans-serif;
+
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --shadow-soft: 0 10px 30px rgba(36, 27, 53, 0.08);
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: 'Arial', sans-serif;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    background-color: var(--color-white);
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* ---------- Botones compartidos ---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--color-white);
+    color: var(--color-ink);
+    border: 1px solid var(--color-beige-dark);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-beige);
+}
+
+.btn-peach {
+    background-color: var(--color-peach);
+    color: var(--color-ink);
+}
+
+.btn-peach:hover {
+    background-color: var(--color-peach-dark);
+    color: var(--color-white);
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: var(--color-white);
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5b;
+}
+
+/* ---------- Badges de estado (usados en tablas de ventas) ---------- */
+
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.badge-completado {
+    background-color: var(--color-success-bg);
+    color: var(--color-success-text);
+}
+
+.badge-reserva-adelanto {
+    background-color: var(--color-warning-bg);
+    color: var(--color-warning-text);
+}
+
+.badge-reserva-sin-adelanto {
+    background-color: var(--color-neutral-bg);
+    color: var(--color-neutral-text);
+}
+
+/* ---------- Utilidades ---------- */
+
+.solo-lectura-visible {
+    color: var(--color-ink-soft);
+    font-size: 14px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: var(--color-ink);
+    color: var(--color-white);
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: var(--shadow-soft);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 100;
+}
+
+.toast.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }

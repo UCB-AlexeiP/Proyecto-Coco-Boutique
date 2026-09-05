@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Producto - Coco Boutique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/registrar-productos.css">
+</head>
+<body>
+    <div class="app-layout">
+
+        <aside class="sidebar">
+            <a href="dashboard.html" class="sidebar-brand">
+                <span class="sidebar-brand-coco">Coco</span>
+                <span class="sidebar-brand-boutique">Boutique</span>
+            </a>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+
+                <div class="nav-group">
+                    <a href="productos.html" class="nav-group-label">Productos</a>
+                    <a href="registrar-producto.html" class="nav-sublink is-active">Registrar Producto</a>
+                </div>
+
+                <div class="nav-group">
+                    <a href="ventas.html" class="nav-group-label">Ventas</a>
+                    <a href="registrar-venta.html" class="nav-sublink">Registrar Venta</a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn-cerrar-sesion" id="btn-cerrar-sesion" type="button">Cerrar sesión</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <div class="page-header">
+                <div>
+                    <h1>Registrar nuevo producto</h1>
+                    <p>Completa los datos de la prenda para agregarla al catálogo</p>
+                </div>
+            </div>
+
+            <form class="formulario-tarjeta" id="form-registrar-producto">
+
+                <div class="campo">
+                    <label for="nombre-producto">Nombre del producto</label>
+                    <input type="text" id="nombre-producto" placeholder="Ej. Vestido de verano" required>
+                </div>
+
+                <div class="campos-fila">
+                    <div class="campo">
+                        <label for="categoria-producto">Categoría</label>
+                        <select id="categoria-producto" required>
+                            <option value="" disabled selected>Selecciona una categoría</option>
+                            <option value="vestidos">Vestido</option>
+                            <option value="pantalones">Pantalón</option>
+                            <option value="chompas">Chompa</option>
+                            <option value="blusas">Blusa</option>
+                            <option value="jeans">Jean</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="precio-producto">Precio (Bs)</label>
+                        <input type="number" id="precio-producto" min="0" step="0.01" required>
+                    </div>
+                </div>
+
+                <div class="campos-fila">
+                    <div class="campo">
+                        <label for="stock-producto">Stock</label>
+                        <input type="number" id="stock-producto" min="0" required>
+                    </div>
+                    <div class="campo cantidad-colores-campo">
+                        <label for="cantidad-colores">Cantidad de colores</label>
+                        <input type="number" id="cantidad-colores" min="0" max="8" value="0">
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label>Talla</label>
+                    <div class="tallas-grupo">
+                        <label class="talla-chip"><input type="checkbox" name="talla" value="S"><span>S</span></label>
+                        <label class="talla-chip"><input type="checkbox" name="talla" value="M"><span>M</span></label>
+                        <label class="talla-chip"><input type="checkbox" name="talla" value="L"><span>L</span></label>
+                        <label class="talla-chip"><input type="checkbox" name="talla" value="XL"><span>XL</span></label>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label>Colores</label>
+                    <span class="ayuda">Indica la cantidad de colores arriba y completa cada nombre.</span>
+                    <div class="colores-lista" id="colores-lista"></div>
+                </div>
+
+                <div class="campo">
+                    <label for="descripcion-producto">Descripción</label>
+                    <textarea id="descripcion-producto" placeholder="Breve descripción de la prenda"></textarea>
+                </div>
+
+                <div class="campo">
+                    <label for="imagen-producto">Subir imagen</label>
+                    <input type="file" id="imagen-producto" accept="image/*">
+                    <div class="imagen-preview" id="imagen-preview">Sin imagen</div>
+                </div>
+
+                <div class="formulario-acciones">
+                    <a href="productos.html" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+
+            </form>
+
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/registrar-producto.js"></script>
+</body>
+</html>

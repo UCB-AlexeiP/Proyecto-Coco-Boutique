@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Coco Boutique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/tablas.css">
+    <link rel="stylesheet" href="css/productos.css">
+</head>
+<body>
+    <div class="app-layout">
+
+        <aside class="sidebar">
+            <a href="dashboard.html" class="sidebar-brand">
+                <span class="sidebar-brand-coco">Coco</span>
+                <span class="sidebar-brand-boutique">Boutique</span>
+            </a>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+
+                <div class="nav-group">
+                    <a href="productos.html" class="nav-group-label is-active">Productos</a>
+                    <a href="registrar-producto.html" class="nav-sublink">Registrar Producto</a>
+                </div>
+
+                <div class="nav-group">
+                    <a href="ventas.html" class="nav-group-label">Ventas</a>
+                    <a href="registrar-venta.html" class="nav-sublink">Registrar Venta</a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn-cerrar-sesion" id="btn-cerrar-sesion" type="button">Cerrar sesión</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <div class="page-header">
+                <div>
+                    <h1>Productos</h1>
+                    <p><span id="stat-total-productos">0</span> prendas en el catálogo</p>
+                </div>
+                <a href="registrar-producto.html" class="btn btn-primary">+ Registrar producto</a>
+            </div>
+
+            <div class="toolbar">
+                <input type="search" id="buscador-productos" placeholder="Buscar por nombre...">
+                <div class="toolbar-filtros">
+                    <select id="filtro-categoria">
+                        <option value="todas">Todas las categorías</option>
+                        <option value="vestidos">Vestidos</option>
+                        <option value="blusas">Blusas</option>
+                        <option value="chompas">Chompas</option>
+                        <option value="jeans">Jeans</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Tallas</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-productos-body"></tbody>
+                </table>
+                <p class="tabla-vacia" id="productos-vacio" hidden>No se encontraron productos.</p>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/productos.js"></script>
+</body>
+</html>

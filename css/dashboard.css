@@ -1,0 +1,18 @@
+.bienvenida {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    margin-bottom: 32px;
+}
+
+.bienvenida h1 {
+    color: var(--color-white);
+    font-size: 28px;
+}
+
+.bienvenida p {
+    margin-top: 6px;
+    color: var(--color-primary-light);
+    font-size: 15px;
+}

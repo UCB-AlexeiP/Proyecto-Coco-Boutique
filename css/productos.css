@@ -1,0 +1,35 @@
+.producto-nombre-celda {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.producto-nombre-celda strong {
+    display: block;
+    font-size: 14px;
+}
+
+.producto-nombre-celda span {
+    font-size: 12px;
+    color: var(--color-ink-soft);
+}
+
+.tallas-celda {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.talla-tag {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 6px;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+}
+
+.stock-bajo {
+    color: var(--color-peach-dark);
+    font-weight: 700;
+}

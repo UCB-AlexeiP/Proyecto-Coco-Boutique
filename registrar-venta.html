@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Venta - Coco Boutique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/registrar-venta.css">
+</head>
+<body>
+    <div class="app-layout">
+
+        <aside class="sidebar">
+            <a href="dashboard.html" class="sidebar-brand">
+                <span class="sidebar-brand-coco">Coco</span>
+                <span class="sidebar-brand-boutique">Boutique</span>
+            </a>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+
+                <div class="nav-group">
+                    <a href="productos.html" class="nav-group-label">Productos</a>
+                    <a href="registrar-producto.html" class="nav-sublink">Registrar Producto</a>
+                </div>
+
+                <div class="nav-group">
+                    <a href="ventas.html" class="nav-group-label">Ventas</a>
+                    <a href="registrar-venta.html" class="nav-sublink is-active">Registrar Venta</a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn-cerrar-sesion" id="btn-cerrar-sesion" type="button">Cerrar sesión</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <div class="page-header">
+                <div>
+                    <h1>Registrar nueva venta</h1>
+                    <p>Completa los datos del pedido del cliente</p>
+                </div>
+            </div>
+
+            <form class="formulario-tarjeta" id="form-registrar-venta">
+
+                <div class="campo">
+                    <label for="cliente-venta">Cliente</label>
+                    <input type="text" id="cliente-venta" placeholder="Nombre del cliente" required>
+                </div>
+
+                <div class="campo">
+                    <label for="cantidad-productos-vendidos">Cantidad de productos vendidos</label>
+                    <input type="number" id="cantidad-productos-vendidos" min="1" max="10" placeholder="Ej. 2" required>
+                    <span class="ayuda">Indica cuántos productos distintos incluye esta venta.</span>
+                </div>
+
+                <div class="productos-vendidos-lista" id="productos-vendidos-lista"></div>
+
+                <div class="total-general">
+                    <span>Total de la venta</span>
+                    <span id="total-general-venta">0 Bs</span>
+                </div>
+
+                <div class="campos-fila">
+                    <div class="campo">
+                        <label for="metodo-pago">Método de pago</label>
+                        <select id="metodo-pago" required>
+                            <option value="" disabled selected>Selecciona un método</option>
+                            <option value="Efectivo">Efectivo</option>
+                            <option value="Qr">QR</option>
+                            <option value="Transferencia">Transferencia</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="fecha-venta">Fecha</label>
+                        <input type="date" id="fecha-venta" required>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="estado-venta">Estado</label>
+                    <select id="estado-venta" required>
+                        <option value="" disabled selected>Selecciona un estado</option>
+                        <option value="Completado">Completado</option>
+                        <option value="Reserva con adelanto">Reserva con adelanto</option>
+                        <option value="Reserva sin adelanto">Reserva sin adelanto</option>
+                    </select>
+                </div>
+
+                <div class="campo campo-condicional" id="campo-valor-reserva">
+                    <label for="valor-reserva">Valor de reserva (Bs)</label>
+                    <input type="number" id="valor-reserva" min="0" step="0.01">
+                </div>
+
+                <div class="campo">
+                    <label for="observacion-venta">Observación</label>
+                    <textarea id="observacion-venta" placeholder="Detalles adicionales, incidencias, etc."></textarea>
+                </div>
+
+                <div class="formulario-acciones">
+                    <a href="ventas.html" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+
+            </form>
+
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/registrar-venta.js"></script>
+</body>
+</html>

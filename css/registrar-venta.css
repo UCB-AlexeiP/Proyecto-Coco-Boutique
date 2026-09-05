@@ -1,0 +1,14 @@
+.producto-vendido-fila .eliminar-fila {
+    align-self: center;
+    background: none;
+    border: none;
+    color: #c0392b;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.producto-vendido-fila .eliminar-fila:hover {
+    color: #922b1f;
+}

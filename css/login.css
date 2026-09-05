@@ -1,0 +1,135 @@
+body.pagina-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    padding: 24px;
+}
+
+.tarjeta-login {
+    background-color: var(--color-white);
+    width: 400px;
+    max-width: 100%;
+    padding: 50px 45px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 50px rgba(36, 27, 53, 0.25);
+}
+
+.Titulo-central {
+    font-size: 30px;
+    color: var(--color-ink);
+    margin-bottom: 4px;
+}
+
+.Decripcion-titulo {
+    font-size: 14px;
+    color: var(--color-ink-soft);
+    margin-bottom: 25px;
+}
+
+.Instruccion {
+    font-size: 13px;
+    color: var(--color-ink-soft);
+    margin-top: 14px;
+}
+
+.Instruccion-principal {
+    display: none;
+}
+
+.Instruccion a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.Campo-formulario {
+    display: block;
+    font-size: 0;
+    margin-bottom: 22px;
+    position: relative;
+}
+
+.Campo-formulario input {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 10px 10px 30px;
+    border: none;
+    border-bottom: 1px solid var(--color-beige-dark);
+    outline: none;
+    color: var(--color-ink);
+    background: transparent;
+    transition: border-color 0.2s ease;
+}
+
+.Campo-formulario input::placeholder {
+    color: #b5aec4;
+}
+
+.Campo-formulario input:focus {
+    border-bottom: 1px solid var(--color-primary);
+}
+
+.campo-usuario::before,
+.campo-password::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 12px;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+
+.campo-usuario::before {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23555'><path d='M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.5c-3.3 0-9.9 1.6-9.9 4.9v2.4h19.8v-2.4c0-3.3-6.6-4.9-9.9-4.9z'/></svg>");
+}
+
+.campo-password::before {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23555'><path d='M17 8h-1V6a4 4 0 0 0-8 0v2H7a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1zM10 6a2 2 0 0 1 4 0v2h-4V6z'/></svg>");
+}
+
+.login-error {
+    display: none;
+    font-size: 13px;
+    color: #c0392b;
+    background-color: #fceceb;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+}
+
+.login-error.visible {
+    display: block;
+}
+
+button.boton-login {
+    width: 100%;
+    padding: 13px;
+    margin-top: 8px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button.boton-login:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.login-demo-hint {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--color-ink-soft);
+    background-color: var(--color-beige);
+    padding: 10px;
+    border-radius: 8px;
+}

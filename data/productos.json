@@ -1,0 +1,46 @@
+[
+    {
+        "id": "P001",
+        "nombre": "Vestido de verano",
+        "categoria": "vestidos",
+        "precio": 100,
+        "stock": 8,
+        "tallas": ["S", "M", "L"],
+        "colores": ["Durazno", "Blanco"],
+        "descripcion": "Vestido ligero de algodón, ideal para el día a día.",
+        "imagen": ""
+    },
+    {
+        "id": "P002",
+        "nombre": "Camisa de manga larga",
+        "categoria": "blusas",
+        "precio": 100,
+        "stock": 5,
+        "tallas": ["M", "L", "XL"],
+        "colores": ["Lila"],
+        "descripcion": "Camisa fresca de manga larga, corte holgado.",
+        "imagen": ""
+    },
+    {
+        "id": "P003",
+        "nombre": "Chompa tejida oversize",
+        "categoria": "chompas",
+        "precio": 150,
+        "stock": 6,
+        "tallas": ["S", "M", "L", "XL"],
+        "colores": ["Beige", "Lila"],
+        "descripcion": "Chompa tejida de punto grueso, calidez y estilo.",
+        "imagen": ""
+    },
+    {
+        "id": "P004",
+        "nombre": "Jean mom fit",
+        "categoria": "jeans",
+        "precio": 180,
+        "stock": 10,
+        "tallas": ["S", "M", "L"],
+        "colores": ["Azul clásico"],
+        "descripcion": "Jean de tiro alto, silueta cómoda y versátil.",
+        "imagen": ""
+    }
+]
